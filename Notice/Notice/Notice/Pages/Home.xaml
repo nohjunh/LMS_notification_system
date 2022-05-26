@@ -1,0 +1,75 @@
+﻿<Page x:Class="Notice.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Notice.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="655" d:DesignWidth="897" Margin="5"
+      Title="Home">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--제목 부분-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon Kind="Home" Height="60" Width="60" 
+                                     VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#5c9bcd"/>
+            <TextBlock Grid.Column="1" Text="Home" FontSize="35" Foreground="#619196" FontFamily="Fonts/KoPubWorld Dotum Bold.ttf #KoPubWorld돋움체 Bold" 
+                               VerticalAlignment="Center" Margin="5"/>
+        </Grid>
+
+        <!--하단-->
+        <Grid Grid.Row="1">
+            <Border BorderBrush="#d7d7d7" BorderThickness="3" CornerRadius="15"
+                    Margin="15"> 
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!--학과 공지-->
+                    <Button Content="Searching" 
+                            Width="100" Height="30" HorizontalAlignment="Right"
+                            Margin="50,0"
+                            Click="Button_Click"/>
+                    <TextBlock Text="학과 공지" FontSize="25"
+                               Margin="20,15,200,15" VerticalAlignment="Center"
+                               FontFamily="/Fonts/AppleSDGothicNeoR.ttf #AppleSDGothicNeoR00" Foreground="#619196"/>
+                    <TextBlock Grid.Row="1" 
+                               Text="첫 페이지의 정보들이 보입니다." FontSize="15"
+                               Margin="20,0" VerticalAlignment="Center"
+                               FontFamily="/Fonts/AppleSDGothicNeoR.ttf #AppleSDGothicNeoR00" Foreground="#619196"/>
+
+                    <Grid Grid.Row="2" Margin="20,5">
+                        <ListView x:Name="DepartmentCrawlingData"
+                                      BorderBrush="Gray">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="번호" 
+                                                    DisplayMemberBinding="{Binding D_Num}" 
+                                                    Width="120"/>
+                                    <GridViewColumn Header="제목" 
+                                                    DisplayMemberBinding="{Binding D_Title}" 
+                                                    Width="550"/>
+                                    <GridViewColumn Header="작성일" 
+                                                    DisplayMemberBinding="{Binding D_Rdate}"
+                                                    Width="120"/>
+                                </GridView>
+                            </ListView.View>  
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

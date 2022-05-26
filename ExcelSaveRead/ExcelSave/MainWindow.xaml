@@ -1,0 +1,34 @@
+﻿<Window x:Class="ExcelSave.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelSave"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="5">
+            <ListView x:Name="beverageView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="c1" Header="종류" Width="50" DisplayMemberBinding="{Binding kind}"/>
+                        <GridViewColumn x:Name="c2" Header="음료 이름" Width="170" DisplayMemberBinding="{Binding name}"/>
+                        <GridViewColumn x:Name="c3" Header="가격" Width="60" DisplayMemberBinding="{Binding price}"/>
+                    </GridView>
+                </ListView.View>
+                
+                
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="5">
+            <Button x:Name="readButton" Content="ReadExcel" Click="readButton_Click"/>
+            <Button x:Name="compareButton" Content="Compare" Click="compareButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

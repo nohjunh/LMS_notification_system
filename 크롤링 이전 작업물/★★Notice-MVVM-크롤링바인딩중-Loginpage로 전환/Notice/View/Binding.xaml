@@ -1,0 +1,99 @@
+﻿<Page x:Class="Notice.View.Binding"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Notice.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:vm="clr-namespace:Notice.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="655" d:DesignWidth="897"
+      Title="Binding">
+
+    <Page.Resources>
+        <vm:ViewModel x:Key="vm"/>
+    </Page.Resources>
+    <Grid Background="White" DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--위쪽-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <materialDesign:PackIcon Kind="TransitConnectionHorizontal" Height="60" Width="60" 
+                                     VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#5c9bcd"/>
+            <TextBlock Grid.Column="1" Text="Binding" FontSize="35" Foreground="#619196" FontFamily="Fonts/KoPubWorld Dotum Bold.ttf #KoPubWorld돋움체 Bold" 
+                               VerticalAlignment="Center" Margin="5"/>
+        </Grid>
+        <!--아래쪽-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--왼쪽-->
+            <Grid Grid.Column="0">
+                <Button x:Name="oasis" Content="OASIS 3.0" 
+                        Margin="50,0,50,300"
+                        Command="{Binding Path=bindingButton}"
+                        CommandParameter="{Binding ElementName=oasis, Path=Name}"/>
+                <Button x:Name="newLMS" Content="New LMS"
+                        Margin="50,0,50,180"
+                        Command="{Binding Path=bindingButton}"
+                        CommandParameter="{Binding ElementName=oasis, Path=Name}"/>
+                <Button x:Name="oldLMS" Content="Old LMS"
+                        Margin="50,0,50,60"
+                        Command="{Binding Path=bindingButton}"
+                        CommandParameter="{Binding ElementName=oasis, Path=Name}"/>
+
+            </Grid>
+
+            <!--오른쪽-->
+            <Grid Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--Naver-->
+                    <Border BorderBrush="#d7d7d7" BorderThickness="3" CornerRadius="15" Margin="0,0,5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Images/naverMail.PNG" 
+                                   Height="150" Width="150"/>
+                            <Button Grid.Row="1" Margin="40,0,40,220" Height="40" 
+                                    Background="#2DB400" BorderBrush="{x:Null}"
+                                    Content="네이버 메일 연동" FontFamily="/Fonts/Montserrat-SemiBold.ttf #Montserrat SemiBold"/>
+                        </Grid>
+                    </Border>
+                    <!--KaKao-->
+                    <Border Grid.Column="1" BorderBrush="#d7d7d7" BorderThickness="3" CornerRadius="15" Margin="0,0,5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Images\kakaoTalk.PNG"
+                                   Height="150" Width="150"/>
+
+                            <Button Grid.Row="1" Margin="40,0,40,220" Height="40" 
+                                    Background="#F7E600" BorderBrush="{x:Null}" Foreground="#3A1D1D"
+                                    Content="카카오톡 연동" FontFamily="/Fonts/Montserrat-SemiBold.ttf #Montserrat SemiBold"/>
+
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Page>
