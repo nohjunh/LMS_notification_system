@@ -1,0 +1,9 @@
+﻿<Application x:Class="메일_보내기_체험_API_사용안하고_.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:메일_보내기_체험_API_사용안하고_"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

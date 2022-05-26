@@ -1,0 +1,71 @@
+﻿<Window x:Class="네이버_메일_보내기_테스트.View.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:네이버_메일_보내기_테스트.View"
+        mc:Ignorable="d"
+        Title="Main" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <!--보내는 사람-->
+        <Border BorderBrush="Black" BorderThickness="2">
+            <StackPanel Margin="10">
+                <TextBlock x:Name="sendMail"
+                           FontSize="30"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="보내는 사람"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="20">
+            <TextBlock Text="메일 주소"
+                       FontSize="20"
+                       Margin="0 0 0 10"/>
+            <TextBox x:Name="sendPerson" FontSize="20"
+                     Foreground="Gray"
+                     Margin="0 10 0 30"
+                     Text="{Binding }"/>
+
+            <TextBlock Text="내용"
+                       FontSize="20"/>
+
+            <TextBox x:Name="content" 
+                     FontSize="20" 
+                     Height="300"/>
+            <Button x:Name="send"
+                    Content="메일 보내기"
+                    FontSize="15"
+                    Width="150"
+                    Margin="10"/>
+        </StackPanel>
+
+        <!--받는사람-->
+        <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1">
+            <StackPanel Margin="10" >
+                <TextBlock x:Name="receiveMail"
+                           FontSize="30"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="받는 사람"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="20">
+            <TextBlock Text="메일 주소"
+                       FontSize="20"
+                       Margin="0 0 0 10"/>
+            <TextBox x:Name="receivePerson"
+                     FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</Window>

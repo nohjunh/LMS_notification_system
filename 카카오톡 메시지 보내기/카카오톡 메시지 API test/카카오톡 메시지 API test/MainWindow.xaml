@@ -1,0 +1,68 @@
+﻿<Window x:Class="카카오톡_메시지_API_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:카카오톡_메시지_API_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="Login"
+                Grid.Column="0"
+                Grid.Row="0"
+                Content="로그인 버튼"
+                FontSize="20"
+                Margin="10"
+                Click="Login_Click"/>
+        <Button x:Name="Logout"
+                Grid.Column="1"
+                Grid.Row="0"
+                Content="로그아웃 버튼"
+                FontSize="20"
+                Margin="10"
+                Click="Logout_Click"/>
+        <Button x:Name="templateMessage"
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="템플릿 메시지"
+                FontSize="20"
+                Margin="10"
+                Click="templateMessage_Click"/>
+        <Button x:Name="customMessage"
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="커스텀 메시지"
+                FontSize="20"
+                Margin="10"
+                Click="customMessage_Click"/>
+        <Button x:Name="userData"
+                Grid.Column="2"
+                Grid.Row="1"
+                Content="유저 데이터"
+                FontSize="20"
+                Margin="10"
+                Click="userData_Click"/>
+        <Image x:Name="PictureBox_UserImg" Grid.Column="0"
+               Grid.Row="2"
+               Stretch="Fill"
+               />
+        <Label x:Name="Label_UserName" Grid.Column="1"
+               Grid.Row="2"
+               Content="이름"
+               FontSize="50"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
+
+    </Grid>
+</Window>
