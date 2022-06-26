@@ -27,7 +27,9 @@ Windows Programming 기말과제
  개발환경 :
  
     WPF 프레임워크로 C#환경에서 개발
- 
+    
+    WPF 프레임워크 & SMTP & kakao api & selenium & MVVM 패턴
+    
  구조 :
  
     MVVM 패턴 적용
