@@ -28,13 +28,13 @@ Windows Programming 기말과제
  
     WPF 프레임워크로 C#환경에서 개발
     
-    WPF 프레임워크 & SMTP & kakao api & selenium & MVVM 패턴
+    WPF 프레임워크 & Selenium & SMTP & kakao api & MVVM 패턴
     
  구조 :
  
-    MVVM 패턴 적용
+    MVVM 패턴 적용 (  디자인패턴 )
 
 ------------------------------------------------
-    selenium을 통해 data 취합 -> 자신의 lms data 업로드 -> 정해둔 시간마다 업데이트 -> 
+    selenium을 통해 LMS Web Data Crawling + 취합 -> 자신의 lms data 업로드 -> 정해둔 시간마다 업데이트 -> 
 
     기존 data와 비교 -> 변경된 사항을 SMTP네이버메일 & 카카오톡api를 통해 알림 
